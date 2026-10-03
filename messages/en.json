@@ -1,0 +1,8 @@
+{
+  "hero": {
+    "role": "Front-end Developer.",
+    "tagline": "I build fast, accessible and polished interfaces with React, Next.js and TypeScript.",
+    "ctaProjects": "View projects",
+    "ctaResume": "Download résumé"
+  }
+}
