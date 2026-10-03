@@ -1,26 +1,111 @@
 @import "tailwindcss";
 
+/*
+ * Dark mode is driven by a `.dark` class on <html> (set by next-themes in step 5),
+ * not by the OS preference. This lets the visitor override it with the toggle.
+ */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ---------- Design tokens ---------- */
+
+/* Light theme: white with Cruzeiro royal blue */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f7f9fe;
+  --surface: #ffffff;
+  --line: #d8e0f0;
+  --foreground: #0f172a;
+  --muted: #475569;
+  --accent: #1e40af;
+  --accent-hover: #1e3a8a;
+  --on-accent: #ffffff;
 }
 
+/* Dark theme (default): deep Cruzeiro blue night sky */
+.dark {
+  --background: #040c27;
+  --surface: #0a1942;
+  --line: #172c62;
+  --foreground: #eef3ff;
+  --muted: #a3b4d6;
+  --accent: #5b8dff;
+  --accent-hover: #8db0ff;
+  --on-accent: #040c27;
+}
+
+/*
+ * @theme turns tokens into Tailwind classes:
+ * --color-surface -> bg-surface, text-surface, border-surface...
+ */
 @theme inline {
   --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-line: var(--line);
   --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-on-accent: var(--on-accent);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  /* Fluid display size for the hero name: 44px on phones up to 88px on desktop */
+  --text-display: clamp(2.75rem, 1.9rem + 4.2vw, 5.5rem);
+  --text-display--line-height: 1;
+  --text-display--letter-spacing: -0.035em;
+
+  /* Background stars slowly dim and come back */
+  --animate-twinkle: twinkle 5s ease-in-out infinite;
+
+  @keyframes twinkle {
+    50% {
+      opacity: 0.1;
+    }
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ---------- Base ---------- */
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    color-scheme: light;
+  }
+
+  html.dark {
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+    transition: background-color 200ms ease, color 200ms ease;
+  }
+
+  ::selection {
+    background-color: var(--accent);
+    color: var(--on-accent);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-delay: 0ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
 }
