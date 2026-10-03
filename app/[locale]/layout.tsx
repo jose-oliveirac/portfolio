@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Starfield } from "@/components/ui/Starfield";
-import "./globals.css";
+import "../globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,10 +18,16 @@ export const metadata: Metadata = {
   description: "Portfólio de José Henrique, desenvolvedor front-end especializado em React, Next.js e TypeScript.",
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export async function generateStaticParams(){
+  return [{locale:"pt"}, {locale:"en"}]
+
+}
+
+export default async function RootLayout({ children,  params }: LayoutProps<"/[locale]">) {
+  const {locale} = await params ;
   return (
     <html
-      lang="pt-BR"
+      lang={locale}
     className={`dark ${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">
