@@ -4,5 +4,12 @@
     "tagline": "Construo interfaces rápidas, acessíveis e bem acabadas com React, Next.js e TypeScript.",
     "ctaProjects": "Ver projetos",
     "ctaResume": "Baixar currículo"
-  }
+    
+  },
+  
+  "metadata": {
+  "title": "José Henrique | Desenvolvedor Front-end",
+  "description": "Portfólio de José Henrique, desenvolvedor front-end especializado em React, Next.js e TypeScript."
+}
+  
 }

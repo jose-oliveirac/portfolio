@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Starfield } from "@/components/ui/Starfield";
 import "../globals.css";
+import { getDictionary } from "@/lib/dictionaries";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,10 +14,14 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "José Henrique | Front-end Developer",
-  description: "Portfólio de José Henrique, desenvolvedor front-end especializado em React, Next.js e TypeScript.",
+export async function generateMetadata(): Promise<Metadata> {
+const dict = await getDictionary()
+return {
+  title: dict.metadata.title,
+  description: dict.metadata.description,
 };
+
+}
 
 export async function generateStaticParams(){
   return [{locale:"pt"}, {locale:"en"}]

@@ -4,5 +4,11 @@
     "tagline": "I build fast, accessible and polished interfaces with React, Next.js and TypeScript.",
     "ctaProjects": "View projects",
     "ctaResume": "Download résumé"
-  }
+
+  },
+  
+  "metadata": {
+"title": "José Henrique | Front-end Developer",
+"description": "Portfolio of José Henrique, a front-end developer specializing in React, Next.js and TypeScript."
+}
 }
