@@ -2,6 +2,7 @@ import { ButtonLink } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { Tag } from "@/components/ui/Tag";
+import { getDictionary } from "@/lib/dictionaries";
 
 // Temporary design-system preview. Replaced by the real sections in step 6.
 const palette = [
@@ -15,7 +16,9 @@ const palette = [
 
 const stack = ["HTML", "CSS", "JavaScript", "TypeScript", "React", "Next.js", "Tailwind CSS", "Git"];
 
-export default function HomePage() {
+export default async function HomePage() {
+  const dict = await getDictionary();
+
   return (
     <main className="flex-1">
       <div className="border-b border-line">
@@ -23,13 +26,12 @@ export default function HomePage() {
           <div>
             <h1 className="text-display font-semibold text-foreground">José Henrique</h1>
             <p className="mt-8 max-w-xl text-lg leading-relaxed text-muted sm:text-xl">
-              <span className="text-foreground">Front-end Developer.</span> Construo interfaces rápidas,
-              acessíveis e bem acabadas com React, Next.js e TypeScript.
+              <span className="text-foreground">{dict.hero.role}</span> {dict.hero.tagline}
             </p>
             <div className="mt-10 flex flex-wrap gap-3">
-              <ButtonLink href="#componentes">Ver projetos</ButtonLink>
+              <ButtonLink href="#componentes">{dict.hero.ctaProjects}</ButtonLink>
               <ButtonLink href="#componentes" variant="secondary">
-                Baixar currículo
+                {dict.hero.ctaResume}
               </ButtonLink>
             </div>
           </div>
