@@ -3,6 +3,9 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { Starfield } from "@/components/ui/Starfield";
 import "../globals.css";
 import { getDictionary } from "@/lib/dictionaries";
+import { Header } from "@/components/layout/Header";
+import { ThemeProvider } from "@/components/layout/ThemeProvider";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,11 +36,16 @@ export default async function RootLayout({ children,  params }: LayoutProps<"/[l
   return (
     <html
       lang={locale}
-    className={`dark ${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+    className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+    suppressHydrationWarning
     >
       <body className="flex min-h-full flex-col">
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
+
         <Starfield />
+        <Header />
         {children}
+        </ThemeProvider>
       </body>
     </html>
   );

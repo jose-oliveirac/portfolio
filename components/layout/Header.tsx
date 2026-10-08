@@ -1,0 +1,49 @@
+import { Container } from "@/components/ui/Container";
+import { ThemeToggle } from "@/components/ui/ThemeToggle";
+import { getDictionary } from "@/lib/dictionaries";
+import { LanguageSwitcher } from "./LanguageSwitcher";
+import { MobileMenu } from "./MobileMenu";
+
+/** Sticky top bar: name, section links, language switcher and theme toggle. */
+export async function Header() {
+  const dict = await getDictionary();
+
+  const links = [
+  { href: "#about", label: dict.nav.about },
+  {href : "#experience", label : dict.nav.experience},
+  {href: "#projects", label: dict.nav.projects},
+  {href: "#contact", label: dict.nav.contact}
+];
+  // Exemplo do primeiro item: { href: "#about", label: dict.nav.about }
+
+  return (
+    <header className="sticky top-0 z-40 border-b border-line bg-background/80 backdrop-blur-md">
+      <Container className="flex h-16 items-center justify-between gap-6">
+        <a
+          href="#"
+          className="font-semibold tracking-tight text-foreground transition-colors hover:text-accent"
+        >
+          José Henrique
+        </a>
+
+        <nav className="hidden md:block">
+          <ul className="flex items-center gap-8">
+            {links.map((link) => (
+  <li key={link.href}>
+    <a href={link.href} className="text-sm text-muted transition-colors hover:text-foreground">
+  {link.label}
+</a>
+  </li>
+))}
+          </ul>
+        </nav>
+
+        <div className="flex items-center gap-2">
+          <LanguageSwitcher />
+          <ThemeToggle />
+          <MobileMenu links={links} label={dict.nav.menu} />
+        </div>
+      </Container>
+    </header>
+  );
+}

@@ -4,7 +4,7 @@ import { Section } from "@/components/ui/Section";
 import { Tag } from "@/components/ui/Tag";
 import { getDictionary } from "@/lib/dictionaries";
 
-// Temporary design-system preview. Replaced by the real sections in step 6.
+
 const palette = [
   { name: "background", className: "bg-background" },
   { name: "surface", className: "bg-surface" },

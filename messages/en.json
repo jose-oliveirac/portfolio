@@ -10,5 +10,14 @@
   "metadata": {
 "title": "José Henrique | Front-end Developer",
 "description": "Portfolio of José Henrique, a front-end developer specializing in React, Next.js and TypeScript."
-}
+},
+
+ "nav": {
+  "menu": "Open menu",
+  "about": "About",
+  "experience": "Experience",
+  "projects": "Projects",
+  "contact": "Contact"
+ }
+
 }
