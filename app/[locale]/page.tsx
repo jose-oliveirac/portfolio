@@ -1,8 +1,6 @@
-import { ButtonLink } from "@/components/ui/Button";
-import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { Tag } from "@/components/ui/Tag";
-import { getDictionary } from "@/lib/dictionaries";
+import { Hero } from "@/components/sections/Hero";
 
 
 const palette = [
@@ -16,27 +14,12 @@ const palette = [
 
 const stack = ["HTML", "CSS", "JavaScript", "TypeScript", "React", "Next.js", "Tailwind CSS", "Git"];
 
-export default async function HomePage() {
-  const dict = await getDictionary();
+export default function HomePage() {
 
   return (
     <main className="flex-1">
-      <div className="border-b border-line">
-        <Container className="py-28 sm:py-40">
-          <div>
-            <h1 className="text-display font-semibold text-foreground">José Henrique</h1>
-            <p className="mt-8 max-w-xl text-lg leading-relaxed text-muted sm:text-xl">
-              <span className="text-foreground">{dict.hero.role}</span> {dict.hero.tagline}
-            </p>
-            <div className="mt-10 flex flex-wrap gap-3">
-              <ButtonLink href="#componentes">{dict.hero.ctaProjects}</ButtonLink>
-              <ButtonLink href="#componentes" variant="secondary">
-                {dict.hero.ctaResume}
-              </ButtonLink>
-            </div>
-          </div>
-        </Container>
-      </div>
+      
+      <Hero />
 
       <Section id="cores" title="Paleta">
         <ul className="grid grid-cols-2 gap-4 sm:grid-cols-3">
