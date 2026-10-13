@@ -4,20 +4,24 @@
     "tagline": "I build fast, accessible and polished interfaces with React, Next.js and TypeScript.",
     "ctaProjects": "View projects",
     "ctaResume": "Download résumé"
-
   },
-  
   "metadata": {
-"title": "José Henrique | Front-end Developer",
-"description": "Portfolio of José Henrique, a front-end developer specializing in React, Next.js and TypeScript."
-},
-
- "nav": {
-  "menu": "Open menu",
-  "about": "About",
-  "experience": "Experience",
-  "projects": "Projects",
-  "contact": "Contact"
- }
-
+    "title": "José Henrique | Front-end Developer",
+    "description": "Portfolio of José Henrique, a front-end developer specializing in React, Next.js and TypeScript."
+  },
+  "nav": {
+    "menu": "Open menu",
+    "about": "About",
+    "experience": "Experience",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "about": {
+    "title": "About me",
+    "paragraphs": [
+      "I am a front-end developer and Software Engineering student at UniEvangélica. I build web applications and pages with a focus on fast, accessible and polished interfaces.",
+      "I enjoy turning ideas into clear, easy-to-use interfaces, caring about every detail of the experience. I am also currently studying cybersecurity and Docker."
+    ],
+    "stackTitle": "Tech stack"
+  }
 }
