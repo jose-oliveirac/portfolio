@@ -33,5 +33,11 @@
     "featured": "Featured",
     "code": "Code",
     "live": "Live"
+  },
+  "contact": {
+    "title": "Contact",
+    "text": "Have a project or an idea in mind? Let’s talk.",
+    "copy": "Copy email",
+    "copied": "Copied!"
   }
 }

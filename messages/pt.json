@@ -33,5 +33,11 @@
     "featured": "Destaque",
     "code": "Código",
     "live": "Ao vivo"
+  },
+  "contact": {
+    "title": "Contato",
+    "text": "Tem um projeto ou uma ideia em mente? Vamos conversar.",
+    "copy": "Copiar e-mail",
+    "copied": "Copiado!"
   }
 }

@@ -4,6 +4,7 @@ import { Hero } from "@/components/sections/Hero";
 import { About } from "@/components/sections/About";
 import { Experience } from "@/components/sections/Experience";
 import { Projects } from "@/components/sections/Projects";
+import { Contact } from "@/components/sections/Contact";
 
 
 const palette = [
@@ -29,6 +30,8 @@ export default function HomePage() {
       <Experience />
 
       <Projects />
+
+      <Contact />
 
       <Section id="cores" title="Paleta">
         <ul className="grid grid-cols-2 gap-4 sm:grid-cols-3">
