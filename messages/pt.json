@@ -27,5 +27,11 @@
   "experience": {
     "title": "Experiência",
     "present": "Atual"
+  },
+  "projects": {
+    "title": "Projetos",
+    "featured": "Destaque",
+    "code": "Código",
+    "live": "Ao vivo"
   }
 }

@@ -27,5 +27,11 @@
   "experience": {
     "title": "Experience",
     "present": "Present"
+  },
+  "projects": {
+    "title": "Projects",
+    "featured": "Featured",
+    "code": "Code",
+    "live": "Live"
   }
 }
