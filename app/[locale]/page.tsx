@@ -2,6 +2,7 @@ import { Section } from "@/components/ui/Section";
 import { Tag } from "@/components/ui/Tag";
 import { Hero } from "@/components/sections/Hero";
 import { About } from "@/components/sections/About";
+import { Experience } from "@/components/sections/Experience";
 
 
 const palette = [
@@ -23,6 +24,8 @@ export default function HomePage() {
       <Hero />
 
       <About />
+
+      <Experience />
 
       <Section id="cores" title="Paleta">
         <ul className="grid grid-cols-2 gap-4 sm:grid-cols-3">
