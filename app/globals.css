@@ -62,6 +62,58 @@
       opacity: 0.1;
     }
   }
+
+  /* Hero: each letter of the name rises out of a blur */
+  --animate-letter: letter 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+
+  @keyframes letter {
+    from {
+      opacity: 0;
+      transform: translateY(0.35em);
+      filter: blur(10px);
+    }
+  }
+
+  /* Hero: the rest of the content slides up after the name */
+  --animate-fade-up: fade-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(1rem);
+    }
+  }
+
+  /* Hero: the nebula glow slowly breathes */
+  --animate-nebula: nebula 14s ease-in-out infinite alternate;
+
+  @keyframes nebula {
+    to {
+      opacity: 0.6;
+      transform: translate(3rem, 2rem) scale(1.15);
+    }
+  }
+
+  /*
+   * Hero: rotate(145deg) points the streak down-left, then it travels along its own axis.
+   * Only the first ~10% of each cycle is visible, so stars fire rarely.
+   */
+  --animate-shooting-star: shooting-star 9s ease-in infinite;
+
+  @keyframes shooting-star {
+    0% {
+      opacity: 0;
+      transform: rotate(145deg) translateX(0);
+    }
+    2% {
+      opacity: 1;
+    }
+    9%,
+    100% {
+      opacity: 0;
+      transform: rotate(145deg) translateX(22rem);
+    }
+  }
 }
 
 /* ---------- Base ---------- */
