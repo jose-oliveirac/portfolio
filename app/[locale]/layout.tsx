@@ -4,6 +4,7 @@ import { Starfield } from "@/components/ui/Starfield";
 import "../globals.css";
 import { getDictionary } from "@/lib/dictionaries";
 import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
 import { ThemeProvider } from "@/components/layout/ThemeProvider";
 
 
@@ -45,6 +46,7 @@ export default async function RootLayout({ children,  params }: LayoutProps<"/[l
         <Starfield />
         <Header />
         {children}
+        <Footer />
         </ThemeProvider>
       </body>
     </html>

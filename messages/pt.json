@@ -39,5 +39,9 @@
     "text": "Tem um projeto ou uma ideia em mente? Vamos conversar.",
     "copy": "Copiar e-mail",
     "copied": "Copiado!"
+  },
+  "footer": {
+    "rights": "Todos os direitos reservados.",
+    "backToTop": "Voltar ao topo"
   }
 }

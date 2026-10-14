@@ -39,5 +39,9 @@
     "text": "Have a project or an idea in mind? Let’s talk.",
     "copy": "Copy email",
     "copied": "Copied!"
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "backToTop": "Back to top"
   }
 }
