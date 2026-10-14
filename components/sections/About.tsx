@@ -16,6 +16,7 @@ export async function About() {
           src={photo}
           alt="José Henrique"
           sizes="(min-width: 768px) 256px, 192px"
+          quality={90}
           placeholder="blur"
           className="aspect-square w-48 rounded-2xl border border-line object-cover md:w-full"
         />
