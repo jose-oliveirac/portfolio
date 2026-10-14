@@ -1,3 +1,5 @@
+import Image from "next/image";
+import photo from "@/public/foto-jose-henrique.jpg";
 import { Section } from "@/components/ui/Section";
 import { Tag } from "@/components/ui/Tag";
 import { stack } from "@/data/stack";
@@ -10,13 +12,13 @@ export async function About() {
   return (
     <Section id="about" title={dict.about.title}>
       <div className="grid gap-10 md:grid-cols-[16rem_1fr] md:gap-16">
-        {/* Placeholder until the photo arrives (will become next/image) */}
-        <div
-          aria-hidden
-          className="flex aspect-square w-48 items-center justify-center rounded-2xl border border-line bg-surface font-mono text-4xl text-muted md:w-full"
-        >
-          JH
-        </div>
+        <Image
+          src={photo}
+          alt="José Henrique"
+          sizes="(min-width: 768px) 256px, 192px"
+          placeholder="blur"
+          className="aspect-square w-48 rounded-2xl border border-line object-cover md:w-full"
+        />
 
         <div>
           <div className="max-w-prose space-y-5 text-lg leading-relaxed text-muted">
