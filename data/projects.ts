@@ -1,5 +1,7 @@
 import type { StaticImageData } from "next/image";
 import cruzeiro from "@/public/projects/cruzeiro.png";
+import tera from "@/public/projects/tera.png";
+import hidrolink from "@/public/projects/hidrolink.png";
 import type { Localized } from "./experience";
 
 export type Project = {
@@ -31,11 +33,13 @@ export const projects: Project[] = [
   {
     title: "TERA",
     description: {
-      pt: "Plataforma institucional da TERA — Gestão e Negócios. Desenvolvi toda a interface e a arquitetura front-end, fiel ao protótipo do Figma, em dupla com um desenvolvedor back-end.",
-      en: "Corporate platform for TERA — Gestão e Negócios. I built the whole interface and front-end architecture, faithful to the Figma prototype, alongside a back-end developer.",
+      pt: "Plataforma institucional da TERA — Gestão e Negócios. Desenvolvi toda a interface e a arquitetura front-end, fiel ao protótipo do Figma, em dupla com um desenvolvedor back-end, e dockerizei o front-end.",
+      en: "Corporate platform for TERA — Gestão e Negócios. I built the whole interface and front-end architecture, faithful to the Figma prototype, alongside a back-end developer, and containerized the front-end with Docker.",
     },
-    stack: ["React", "TypeScript", "Vite", "React Router"],
+    stack: ["React", "TypeScript", "Vite", "React Router", "Docker"],
     repo: "https://github.com/jose-oliveirac/TERA-Front",
+    image: tera,
+    featured: true,
   },
   {
     title: "HidroLink",
@@ -44,6 +48,9 @@ export const projects: Project[] = [
       en: "A web system for monitoring irrigation for small farmers in Goiás, built as a team. I was co-lead and came up with the idea, owning the architecture and the whole front-end: routing, navigation and login.",
     },
     stack: ["React", "TypeScript", "Vite"],
+    repo: "https://github.com/jose-oliveirac/HidroLink",
+    image: hidrolink,
+    featured: true,
   },
   {
     title: "Netflix Clone",

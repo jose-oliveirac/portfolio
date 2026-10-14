@@ -4,6 +4,7 @@ import { Section } from "@/components/ui/Section";
 import { Tag } from "@/components/ui/Tag";
 import { projects, type Project } from "@/data/projects";
 import { getDictionary } from "@/lib/dictionaries";
+import { cn } from "@/lib/utils";
 
 type Labels = { code: string; live: string };
 
@@ -49,7 +50,7 @@ function StackTags({ stack }: { stack: string[] }) {
   );
 }
 
-/** A wide featured card (with screenshot) followed by a grid of the other projects. */
+/** Wide featured cards (with screenshot, alternating sides) followed by a grid of the other projects. */
 export async function Projects() {
   const dict = await getDictionary();
   const lang = (await locale()) === "en" ? "en" : "pt";
@@ -61,17 +62,24 @@ export async function Projects() {
   return (
     <Section id="projects" title={dict.projects.title}>
       <div className="space-y-6">
-        {featured.map((project) => (
+        {featured.map((project, index) => (
           <article
             key={project.title}
-            className="grid overflow-hidden rounded-2xl border border-line bg-surface md:grid-cols-[3fr_2fr]"
+            className={cn(
+              "grid overflow-hidden rounded-2xl border border-line bg-surface",
+              // Every second featured card puts the screenshot on the right
+              index % 2 === 0 ? "md:grid-cols-[3fr_2fr]" : "md:grid-cols-[2fr_3fr]",
+            )}
           >
             {project.image && (
               <Image
                 src={project.image}
                 alt={project.title}
                 sizes="(min-width: 768px) 600px, 100vw"
-                className="h-full w-full border-b border-line object-cover object-top md:border-r md:border-b-0"
+                className={cn(
+                  "h-full w-full border-b border-line object-cover object-top md:border-b-0",
+                  index % 2 === 0 ? "md:border-r" : "md:order-last md:border-l",
+                )}
               />
             )}
             <div className="flex flex-col p-6 sm:p-8">
@@ -86,7 +94,7 @@ export async function Projects() {
           </article>
         ))}
 
-        <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <ul className={cn("grid gap-6", others.length > 1 && "sm:grid-cols-2")}>
           {others.map((project) => (
             <li key={project.title}>
               <article className="flex h-full flex-col rounded-2xl border border-line bg-surface p-6 transition-colors hover:border-accent/50">
