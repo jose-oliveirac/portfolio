@@ -32,7 +32,8 @@
     "title": "Projetos",
     "featured": "Destaque",
     "code": "Código",
-    "live": "Ao vivo"
+    "live": "Ao vivo",
+    "inProgress": "Em andamento"
   },
   "contact": {
     "title": "Contato",

@@ -15,6 +15,8 @@ export type Project = {
   image?: StaticImageData;
   /** Shown as a wide card above the others */
   featured?: boolean;
+  /** Still being built: shows an "Em andamento" badge */
+  inProgress?: boolean;
 };
 
 export const projects: Project[] = [
@@ -59,5 +61,6 @@ export const projects: Project[] = [
       en: "A working Netflix clone with Firebase authentication and database, a catalog from the TMDB API and subscriptions through Stripe Checkout. Deployed on Firebase Hosting.",
     },
     stack: ["React", "Redux", "Firebase", "Stripe"],
+    inProgress: true,
   },
 ];

@@ -32,7 +32,8 @@
     "title": "Projects",
     "featured": "Featured",
     "code": "Code",
-    "live": "Live"
+    "live": "Live",
+    "inProgress": "In progress"
   },
   "contact": {
     "title": "Contact",
