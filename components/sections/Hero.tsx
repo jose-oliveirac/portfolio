@@ -8,8 +8,8 @@ import { HeroSky } from "./HeroSky";
 const name = "José Henrique";
 
 // Each letter starts 45ms after the previous one; the rest of the hero waits for the name
-const letterDelay = 45;
-const afterName = name.length * letterDelay + 200;
+const letterDelay = 35;
+const afterName = name.length * letterDelay + 50;
 
 export async function Hero() {
   const dict = await getDictionary();
@@ -34,7 +34,7 @@ export async function Hero() {
         </h1>
 
         <p
-          className="mt-8 max-w-xl animate-fade-up text-lg leading-relaxed text-muted sm:text-xl"
+          className="mt-8 max-w-xl animate-rise text-lg leading-relaxed text-muted sm:text-xl"
           style={{ animationDelay: `${afterName}ms` }}
         >
           <span className="text-foreground">{dict.hero.role}</span>{" "}

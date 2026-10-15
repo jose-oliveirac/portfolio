@@ -12,7 +12,7 @@ export async function Contact() {
 
   return (
     <Section id="contact" title={dict.contact.title}>
-      <div className="rounded-2xl border border-line bg-surface p-6 sm:p-10">
+      <div className="reveal rounded-2xl border border-line bg-surface p-6 sm:p-10">
         <p className="max-w-prose text-lg leading-relaxed text-muted">{dict.contact.text}</p>
 
         <a

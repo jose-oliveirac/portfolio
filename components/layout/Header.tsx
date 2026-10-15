@@ -18,6 +18,11 @@ export async function Header() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-line bg-background/80 backdrop-blur-md">
+      {/* Reading progress: fills as the page scrolls (pure CSS, see globals.css) */}
+      <span
+        aria-hidden
+        className="scroll-progress absolute inset-x-0 -bottom-px h-0.5 origin-left bg-accent"
+      />
       <Container className="flex h-16 items-center justify-between gap-6">
         <a
           href="#"
@@ -40,7 +45,7 @@ export async function Header() {
 
         <div className="flex items-center gap-2">
           <LanguageSwitcher />
-          <ThemeToggle />
+          <ThemeToggle label={dict.nav.theme} />
           <MobileMenu links={links} label={dict.nav.menu} />
         </div>
       </Container>

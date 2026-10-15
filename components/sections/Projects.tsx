@@ -80,7 +80,7 @@ export async function Projects() {
           <article
             key={project.title}
             className={cn(
-              "grid overflow-hidden rounded-2xl border border-line bg-surface",
+              "reveal grid overflow-hidden rounded-2xl border border-line bg-surface",
               // Every second featured card puts the screenshot on the right
               index % 2 === 0 ? "md:grid-cols-[3fr_2fr]" : "md:grid-cols-[2fr_3fr]",
             )}
@@ -112,7 +112,7 @@ export async function Projects() {
 
         <ul className={cn("grid gap-6", others.length > 1 && "sm:grid-cols-2")}>
           {others.map((project) => (
-            <li key={project.title}>
+            <li key={project.title} className="reveal">
               <article className="flex h-full flex-col rounded-2xl border border-line bg-surface p-6 transition-colors hover:border-accent/50">
                 <ProjectTitle project={project} size="text-xl" inProgressLabel={dict.projects.inProgress} />
                 <p className="mt-3 flex-1 leading-relaxed text-muted">{project.description[lang]}</p>

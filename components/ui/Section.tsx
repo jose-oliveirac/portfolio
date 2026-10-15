@@ -15,7 +15,7 @@ export function Section({ id, title, children }: SectionProps) {
       <Container>
         <h2
           id={headingId}
-          className="mb-10 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl"
+          className="reveal mb-10 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl"
         >
           {title}
         </h2>

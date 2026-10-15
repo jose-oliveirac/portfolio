@@ -18,10 +18,10 @@ export async function About() {
           sizes="(min-width: 768px) 256px, 192px"
           quality={90}
           placeholder="blur"
-          className="aspect-square w-48 rounded-2xl border border-line object-cover md:w-full"
+          className="reveal aspect-square w-48 rounded-2xl border border-line object-cover md:w-full"
         />
 
-        <div>
+        <div className="reveal">
           <div className="max-w-prose space-y-5 text-lg leading-relaxed text-muted">
             {dict.about.paragraphs.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
