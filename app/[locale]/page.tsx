@@ -6,7 +6,7 @@ import { Contact } from "@/components/sections/Contact";
 
 export default function HomePage() {
   return (
-    <main className="flex-1">
+    <main id="main" tabIndex={-1} className="flex-1 outline-none">
       <Hero />
       <About />
       <Experience />

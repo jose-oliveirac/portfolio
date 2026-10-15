@@ -1,7 +1,7 @@
 {
   "hero": {
     "role": "Front-end Developer.",
-    "tagline": "I build fast, accessible and polished interfaces with React, Next.js and TypeScript.",
+    "tagline": "I turn Figma prototypes into faithful, fast and responsive web interfaces with React, Next.js and TypeScript.",
     "ctaProjects": "View projects",
     "ctaResume": "Download résumé"
   },
@@ -15,13 +15,14 @@
     "experience": "Experience",
     "projects": "Projects",
     "contact": "Contact",
-    "theme": "Toggle theme"
+    "theme": "Toggle theme",
+    "skip": "Skip to content"
   },
   "about": {
     "title": "About me",
     "paragraphs": [
-      "I am a front-end developer and Software Engineering student at UniEvangélica. I build web applications and pages with a focus on fast, accessible and polished interfaces.",
-      "I enjoy turning ideas into clear, easy-to-use interfaces, caring about every detail of the experience. I am also currently studying cybersecurity and Docker."
+      "I am a front-end developer and a Software Engineering student at UniEvangélica, in Anápolis, Brazil. My focus is the bridge between design and code: taking a prototype and shipping an interface that works on any screen, loads fast and can be used by everyone, including people who navigate with a keyboard or a screen reader.",
+      "Beyond the front-end, I have been studying cybersecurity and Docker, and I have already containerized the front-end of a real project. Away from the code, I am a lifelong Cruzeiro fan: that passion became the landing page you will find among my projects."
     ],
     "stackTitle": "Tech stack"
   },

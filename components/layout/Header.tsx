@@ -3,20 +3,29 @@ import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { getDictionary } from "@/lib/dictionaries";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { MobileMenu } from "./MobileMenu";
+import { NavLinks } from "./NavLinks";
 
 /** Sticky top bar: name, section links, language switcher and theme toggle. */
 export async function Header() {
   const dict = await getDictionary();
 
   const links = [
-  { href: "#about", label: dict.nav.about },
-  {href : "#experience", label : dict.nav.experience},
-  {href: "#projects", label: dict.nav.projects},
-  {href: "#contact", label: dict.nav.contact}
-];
-  // Exemplo do primeiro item: { href: "#about", label: dict.nav.about }
+    { href: "#about", label: dict.nav.about },
+    { href: "#experience", label: dict.nav.experience },
+    { href: "#projects", label: dict.nav.projects },
+    { href: "#contact", label: dict.nav.contact },
+  ];
 
   return (
+    <>
+    {/* Keyboard users: the first Tab shows this link and jumps straight to the content */}
+    <a
+      href="#main"
+      className="sr-only rounded-lg bg-accent text-sm font-medium text-on-accent focus:not-sr-only focus:fixed focus:top-3 focus:left-4 focus:z-50 focus:px-4 focus:py-2.5 focus:shadow-lg"
+    >
+      {dict.nav.skip}
+    </a>
+
     <header className="sticky top-0 z-40 border-b border-line bg-background/80 backdrop-blur-md">
       {/* Reading progress: fills as the page scrolls (pure CSS, see globals.css) */}
       <span
@@ -32,15 +41,7 @@ export async function Header() {
         </a>
 
         <nav className="hidden md:block">
-          <ul className="flex items-center gap-8">
-            {links.map((link) => (
-  <li key={link.href}>
-    <a href={link.href} className="text-sm text-muted transition-colors hover:text-foreground">
-  {link.label}
-</a>
-  </li>
-))}
-          </ul>
+          <NavLinks links={links} />
         </nav>
 
         <div className="flex items-center gap-2">
@@ -50,5 +51,6 @@ export async function Header() {
         </div>
       </Container>
     </header>
+    </>
   );
 }

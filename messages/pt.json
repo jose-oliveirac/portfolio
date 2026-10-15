@@ -1,7 +1,7 @@
 {
   "hero": {
     "role": "Desenvolvedor Front-end.",
-    "tagline": "Construo interfaces rápidas, acessíveis e bem acabadas com React, Next.js e TypeScript.",
+    "tagline": "Transformo protótipos do Figma em interfaces web fiéis, rápidas e responsivas, com React, Next.js e TypeScript.",
     "ctaProjects": "Ver projetos",
     "ctaResume": "Baixar currículo"
   },
@@ -15,13 +15,14 @@
     "experience": "Experiência",
     "projects": "Projetos",
     "contact": "Contato",
-    "theme": "Alternar tema"
+    "theme": "Alternar tema",
+    "skip": "Pular para o conteúdo"
   },
   "about": {
     "title": "Sobre mim",
     "paragraphs": [
-      "Sou desenvolvedor front-end e estudante de Engenharia de Software na UniEvangélica. Construo aplicações e páginas web com foco em interfaces rápidas, acessíveis e bem acabadas.",
-      "Gosto de transformar ideias em interfaces claras e fáceis de usar, cuidando de cada detalhe da experiência. Hoje também venho estudando cibersegurança e Docker."
+      "Sou desenvolvedor front-end e estudo Engenharia de Software na UniEvangélica, em Anápolis (GO). Meu foco é a ponte entre design e código: pegar um protótipo e entregar uma interface que funcione em qualquer tela, carregue rápido e possa ser usada por todo mundo, inclusive por quem navega pelo teclado ou por leitor de tela.",
+      "Além do front-end, venho estudando cibersegurança e Docker, e já dockerizei o front de um projeto real. Fora do código, sou cruzeirense de coração: foi essa paixão que virou a landing page que está entre os meus projetos."
     ],
     "stackTitle": "Tecnologias"
   },

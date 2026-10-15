@@ -23,8 +23,8 @@ export const projects: Project[] = [
   {
     title: "Landing page Cruzeiro",
     description: {
-      pt: "Exposição virtual sobre a história do Cruzeiro Esporte Clube, com sala de troféus e galeria de lendas. Landing page responsiva, com estrutura semântica e atenção à tipografia e ao espaçamento.",
-      en: "A virtual exhibition about the history of Cruzeiro Esporte Clube, with a trophy room and a gallery of legends. A responsive landing page with semantic markup and careful typography and spacing.",
+      pt: "Exposição virtual sobre a história do Cruzeiro, feita por um torcedor: sala de troféus, galeria de lendas em zigue-zague e títulos em degradê. Componentizada em React e TypeScript, responsiva e com HTML semântico.",
+      en: "A virtual exhibition about the history of Cruzeiro, built by a fan: a trophy room, a zig-zag gallery of legends and gradient headlines. Componentized in React and TypeScript, responsive and built on semantic HTML.",
     },
     stack: ["React", "TypeScript", "Vite", "CSS"],
     repo: "https://github.com/jose-oliveirac/Landing-page-Cruzeiro",
@@ -35,8 +35,8 @@ export const projects: Project[] = [
   {
     title: "TERA",
     description: {
-      pt: "Plataforma institucional da TERA — Gestão e Negócios. Desenvolvi toda a interface e a arquitetura front-end, fiel ao protótipo do Figma, em dupla com um desenvolvedor back-end, e dockerizei o front-end.",
-      en: "Corporate platform for TERA — Gestão e Negócios. I built the whole interface and front-end architecture, faithful to the Figma prototype, alongside a back-end developer, and containerized the front-end with Docker.",
+      pt: "Site institucional de uma consultoria de gestão. Fui responsável por todo o front-end, da arquitetura dos componentes à reprodução fiel do protótipo do Figma, trabalhando em dupla com um desenvolvedor back-end. Também dockerizei a aplicação.",
+      en: "Corporate website for a management consultancy. I owned the entire front-end, from the component architecture to a faithful build of the Figma prototype, working alongside a back-end developer. I also containerized the app with Docker.",
     },
     stack: ["React", "TypeScript", "Vite", "React Router", "Docker"],
     repo: "https://github.com/jose-oliveirac/TERA-Front",
@@ -46,8 +46,8 @@ export const projects: Project[] = [
   {
     title: "HidroLink",
     description: {
-      pt: "Sistema web de monitoramento de irrigação para pequenos produtores rurais de Goiás, feito em equipe. Fui co-líder e idealizador, responsável pela arquitetura e por todo o front-end: rotas, navegação e login.",
-      en: "A web system for monitoring irrigation for small farmers in Goiás, built as a team. I was co-lead and came up with the idea, owning the architecture and the whole front-end: routing, navigation and login.",
+      pt: "Painel de irrigação para pequenos produtores rurais de Goiás, com umidade do solo, clima e recomendação de quando irrigar (dados simulados). Idealizei o projeto, fui co-líder do time e construí todo o front-end: arquitetura, rotas, navegação e login.",
+      en: "An irrigation dashboard for small farmers in Goiás, Brazil, showing soil moisture, weather and when to water (simulated data). I came up with the idea, co-led the team and built the entire front-end: architecture, routing, navigation and login.",
     },
     stack: ["React", "TypeScript", "Vite"],
     repo: "https://github.com/jose-oliveirac/HidroLink",

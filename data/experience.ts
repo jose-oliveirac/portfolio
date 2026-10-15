@@ -21,12 +21,12 @@ export const experiences: Experience[] = [
     start: "2025-08",
     achievements: [
       {
-        pt: "Desenvolvo aplicações e páginas web voltadas para a UniEvangélica, com carga de 20 horas semanais.",
-        en: "I build web applications and pages for UniEvangélica, working 20 hours a week.",
+        pt: "Desenvolvo as interfaces de aplicações e páginas web da UniEvangélica com React e TypeScript, dentro do time da Fábrica de Tecnologias Turing (20 h por semana).",
+        en: "I build the interfaces of UniEvangélica’s web applications and pages with React and TypeScript, as part of the Fábrica de Tecnologias Turing team (20 hours a week).",
       },
       {
-        pt: "Atuo no front-end do VERUN, sistema de locação e organização de salas de provas da UniEvangélica, corrigindo bugs da interface.",
-        en: "I work on the front-end of VERUN, UniEvangélica's system for booking and organizing exam rooms, fixing interface bugs.",
+        pt: "No VERUN, sistema que organiza a reserva de salas de provas da universidade, investigo e corrijo bugs de interface em uma base de código compartilhada com o time.",
+        en: "On VERUN, the university’s system for booking exam rooms, I track down and fix interface bugs in a codebase shared with the team.",
       },
     ],
     stack: ["HTML", "CSS", "JavaScript", "TypeScript", "React", "Git"],

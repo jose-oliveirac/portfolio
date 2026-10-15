@@ -15,7 +15,7 @@ export async function Hero() {
   const dict = await getDictionary();
 
   return (
-    <section className="relative isolate overflow-hidden border-b border-line">
+    <section id="top" className="relative isolate overflow-hidden border-b border-line">
       <HeroSky />
 
       <Container className="py-28 sm:py-40">
