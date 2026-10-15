@@ -27,6 +27,9 @@ return {
 
 }
 
+// Only /pt and /en exist; any other first segment (e.g. /fr) is a 404
+export const dynamicParams = false;
+
 export async function generateStaticParams(){
   return [{locale:"pt"}, {locale:"en"}]
 

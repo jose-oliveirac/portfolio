@@ -2,8 +2,8 @@
 
 import { useTheme } from "next-themes";
 
-
-export function ThemeToggle() {
+/** Switches between dark and light. `label` comes from the dictionary (client components cannot read it). */
+export function ThemeToggle({ label }: { label: string }) {
   const {resolvedTheme , setTheme} = useTheme();
 
   const toggleTheme = () => {
@@ -15,7 +15,7 @@ export function ThemeToggle() {
     <button
       type="button"
       onClick={toggleTheme}
-      aria-label="Alternar tema"
+      aria-label={label}
       className="inline-flex size-10 items-center justify-center rounded-lg border border-line text-muted transition-colors hover:border-accent hover:text-accent"
     >
       {/* Sun: shown in dark mode (click to go light) */}

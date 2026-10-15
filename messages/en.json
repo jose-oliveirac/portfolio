@@ -14,7 +14,8 @@
     "about": "About",
     "experience": "Experience",
     "projects": "Projects",
-    "contact": "Contact"
+    "contact": "Contact",
+    "theme": "Toggle theme"
   },
   "about": {
     "title": "About me",
