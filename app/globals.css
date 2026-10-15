@@ -63,6 +63,21 @@
     }
   }
 
+  /* Copy button: the check mark pops in (grows past its size, then settles) */
+  --animate-pop: pop 0.4s ease-out;
+
+  @keyframes pop {
+    0% {
+      transform: scale(0);
+    }
+    60% {
+      transform: scale(1.25);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
   /* Hero: each letter of the name rises out of a blur */
   --animate-letter: letter 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
 
@@ -172,6 +187,24 @@
       animation-iteration-count: 1 !important;
       transition-duration: 0.01ms !important;
     }
+  }
+}
+
+/* ---------- Theme switch (View Transitions API) ----------
+ * The browser snapshots the old and the new page and cross-fades them.
+ */
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.45s;
+  animation-timing-function: ease-in-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
   }
 }
 
