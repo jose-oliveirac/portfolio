@@ -1,14 +1,22 @@
 "use client";
 
+import { flushSync } from "react-dom";
+
 import { useTheme } from "next-themes";
 
 /** Switches between dark and light. `label` comes from the dictionary (client components cannot read it). */
 export function ThemeToggle({ label }: { label: string }) {
-  const {resolvedTheme , setTheme} = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
 
   const toggleTheme = () => {
-
-    setTheme(resolvedTheme === 'dark' ? 'light' : 'dark' ) ;
+    const next = resolvedTheme === "dark" ? "light" : "dark";
+    if (!document.startViewTransition) {
+      setTheme(next);
+      return;
+    }
+    document.startViewTransition(() => {
+      flushSync(() => setTheme(next));
+    });
   };
 
   return (
