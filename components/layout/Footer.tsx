@@ -33,7 +33,7 @@ export async function Footer() {
 
           <a
             href="#"
-            className="inline-flex items-center gap-1 transition-colors hover:text-foreground"
+            className="inline-flex items-center gap-1 py-1.5 transition-colors hover:text-foreground"
           >
             {dict.footer.backToTop} ↑
           </a>

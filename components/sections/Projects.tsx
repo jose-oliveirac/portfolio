@@ -14,13 +14,13 @@ function ProjectLinks({ project, labels }: { project: Project; labels: Labels })
   if (!project.repo && !project.live) return null;
 
   return (
-    <div className="mt-6 flex flex-wrap gap-5 text-sm font-medium">
+    <div className="mt-5 flex flex-wrap gap-4 text-sm font-medium">
       {project.live && (
         <a
           href={project.live}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-accent underline-offset-4 hover:underline"
+          className="inline-block py-1.5 text-accent underline-offset-4 hover:underline"
         >
           {labels.live} ↗
         </a>
@@ -30,7 +30,7 @@ function ProjectLinks({ project, labels }: { project: Project; labels: Labels })
           href={project.repo}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-muted transition-colors hover:text-foreground"
+          className="inline-block py-1.5 text-muted transition-colors hover:text-foreground"
         >
           {labels.code} ↗
         </a>
@@ -84,7 +84,8 @@ export async function Projects() {
             className={cn(
               "grid overflow-hidden rounded-2xl border border-line bg-surface hover:border-accent/50",
               // Every second featured card puts the screenshot on the right
-              index % 2 === 0 ? "md:grid-cols-[3fr_2fr]" : "md:grid-cols-[2fr_3fr]",
+              // Side by side only from lg: on tablets the text column got too narrow and the screenshot too cropped
+              index % 2 === 0 ? "lg:grid-cols-[3fr_2fr]" : "lg:grid-cols-[2fr_3fr]",
             )}
           >
             {project.image && (
@@ -92,14 +93,14 @@ export async function Projects() {
                 src={project.image}
                 alt={project.title}
                 // The image column is ~60% of a 1024px container; the browser doubles it on sharp screens
-                sizes="(min-width: 1024px) 620px, (min-width: 768px) 60vw, 100vw"
+                sizes="(min-width: 1024px) 620px, 100vw"
                 quality={90}
                 className={cn(
                   // Crop from the bottom-right, never the top-left where logos and headlines live
-                  "h-full w-full border-b border-line object-cover object-left-top md:border-b-0",
+                  "aspect-[16/10] h-full w-full border-b border-line object-cover object-left-top lg:aspect-auto lg:border-b-0",
                   // Slow zoom on the screenshot while the card is hovered, anchored to the same corner
                   "origin-top-left transition-transform duration-700 ease-out group-hover:scale-[1.03]",
-                  index % 2 === 0 ? "md:border-r" : "md:order-last md:border-l",
+                  index % 2 === 0 ? "lg:border-r" : "lg:order-last lg:border-l",
                 )}
               />
             )}

@@ -42,9 +42,9 @@ export function NavLinks({ links }: NavLinksProps) {
               href={link.href}
               aria-current={isActive ? "true" : undefined}
               className={cn(
-                "relative text-sm transition-colors hover:text-foreground",
+                "relative inline-block py-1.5 text-sm transition-colors hover:text-foreground",
                 // Small accent bar under the active link
-                "after:absolute after:inset-x-0 after:-bottom-1.5 after:h-px after:origin-left after:scale-x-0 after:bg-accent after:transition-transform after:duration-300",
+                "after:absolute after:inset-x-0 after:bottom-0.5 after:h-px after:origin-left after:scale-x-0 after:bg-accent after:transition-transform after:duration-300",
                 isActive ? "text-foreground after:scale-x-100" : "text-muted",
               )}
             >
