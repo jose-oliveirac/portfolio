@@ -49,8 +49,8 @@ card.style.setProperty("--ry", `${rotateY}deg`);
       onPointerLeave={handlePointerLeave}
       className={cn(
         "group transition-[transform,border-color] duration-200 ease-out will-change-transform",
-        "[transform:perspective(1000px)_rotateX(var(--rx,0deg))_rotateY(var(--ry,0deg))]",
-        "motion-reduce:[transform:none]",
+        "transform-[perspective(1000px)_rotateX(var(--rx,0deg))_rotateY(var(--ry,0deg))]",
+        "motion-reduce:transform-none",
         className,
       )}
     >
