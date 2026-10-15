@@ -1,7 +1,7 @@
 import type { StaticImageData } from "next/image";
-import cruzeiro from "@/public/projects/cruzeiro.png";
-import tera from "@/public/projects/tera.png";
-import hidrolink from "@/public/projects/hidrolink.png";
+import cruzeiro from "@/public/projects/cruzeiro.jpg";
+import tera from "@/public/projects/tera.jpg";
+import hidrolink from "@/public/projects/hidrolink.jpg";
 import type { Localized } from "./experience";
 
 export type Project = {

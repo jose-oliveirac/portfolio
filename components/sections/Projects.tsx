@@ -91,11 +91,14 @@ export async function Projects() {
               <Image
                 src={project.image}
                 alt={project.title}
-                sizes="(min-width: 768px) 600px, 100vw"
+                // The image column is ~60% of a 1024px container; the browser doubles it on sharp screens
+                sizes="(min-width: 1024px) 620px, (min-width: 768px) 60vw, 100vw"
+                quality={90}
                 className={cn(
-                  "h-full w-full border-b border-line object-cover object-top md:border-b-0",
-                  // Slow zoom on the screenshot while the card is hovered
-                  "transition-transform duration-700 ease-out group-hover:scale-[1.04]",
+                  // Crop from the bottom-right, never the top-left where logos and headlines live
+                  "h-full w-full border-b border-line object-cover object-left-top md:border-b-0",
+                  // Slow zoom on the screenshot while the card is hovered, anchored to the same corner
+                  "origin-top-left transition-transform duration-700 ease-out group-hover:scale-[1.03]",
                   index % 2 === 0 ? "md:border-r" : "md:order-last md:border-l",
                 )}
               />
