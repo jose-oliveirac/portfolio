@@ -31,4 +31,26 @@ export const experiences: Experience[] = [
     ],
     stack: ["HTML", "CSS", "JavaScript", "TypeScript", "React", "Git"],
   },
+  {
+    company: "UniCietec · UniEvangélica",
+    role: { pt: "Hackathon de Inovação e Empreendedorismo", en: "Innovation & Entrepreneurship Hackathon" },
+    location: "Anápolis, GO",
+    start: "2026-06",
+    end: "2026-06",
+    achievements: [
+      {
+        pt: "Em 2 dias e com um time de 4 pessoas, desenvolvemos o HidroLink: um sistema de gestão de irrigação para a agricultura familiar, que usa sensores IoT no campo para recomendar quando irrigar.",
+        en: "In 2 days, with a team of 4, we built HidroLink: an irrigation management system for family farming that uses IoT sensors in the field to recommend when to water.",
+      },
+      {
+        pt: "Fui co-líder do time e o único desenvolvedor front-end: construí o painel em que o produtor acompanha o solo e recebe as recomendações.",
+        en: "I co-led the team and was its only front-end developer: I built the dashboard where farmers follow their soil and get the recommendations.",
+      },
+      {
+        pt: "Apresentamos a solução em um pitch para avaliadores e mentores, unindo tecnologia, modelo de negócio e impacto social.",
+        en: "We presented the solution in a pitch to judges and mentors, combining technology, business model and social impact.",
+      },
+    ],
+    stack: ["React", "TypeScript", "Vite", "IoT"],
+  },
 ];

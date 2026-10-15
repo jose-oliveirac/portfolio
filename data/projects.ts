@@ -17,6 +17,8 @@ export type Project = {
   featured?: boolean;
   /** Still being built: shows an "Em andamento" badge */
   inProgress?: boolean;
+  /** Extra label next to the title, e.g. where the project was born */
+  badge?: Localized;
 };
 
 export const projects: Project[] = [
@@ -46,11 +48,12 @@ export const projects: Project[] = [
   {
     title: "HidroLink",
     description: {
-      pt: "Painel de irrigação para pequenos produtores rurais de Goiás, com umidade do solo, clima e recomendação de quando irrigar (dados simulados). Idealizei o projeto, fui co-líder do time e construí todo o front-end: arquitetura, rotas, navegação e login.",
-      en: "An irrigation dashboard for small farmers in Goiás, Brazil, showing soil moisture, weather and when to water (simulated data). I came up with the idea, co-led the team and built the entire front-end: architecture, routing, navigation and login.",
+      pt: "Criado no Hackathon de Inovação da UniEvangélica: um painel de irrigação para pequenos produtores rurais de Goiás, com umidade do solo vinda de sensores IoT, clima e recomendação de quando irrigar. Idealizei o projeto, fui co-líder do time e construí todo o front-end: arquitetura, rotas, navegação e login.",
+      en: "Born at UniEvangélica's Innovation Hackathon: an irrigation dashboard for small farmers in Goiás, Brazil, showing soil moisture from IoT sensors, weather and when to water. I came up with the idea, co-led the team and built the entire front-end: architecture, routing, navigation and login.",
     },
     stack: ["React", "TypeScript", "Vite"],
     repo: "https://github.com/jose-oliveirac/HidroLink",
+    badge: { pt: "Hackathon UniCietec", en: "UniCietec Hackathon" },
     image: hidrolink,
     featured: true,
   },

@@ -36,8 +36,11 @@ export async function Experience() {
               />
 
               <p className="font-mono text-sm text-muted">
-                {formatMonth(job.start, lang)} —{" "}
-                {job.end ? formatMonth(job.end, lang) : dict.experience.present}
+                {formatMonth(job.start, lang)}
+                {/* One-month events (like a hackathon) show a single date */}
+                {job.end !== job.start && (
+                  <> — {job.end ? formatMonth(job.end, lang) : dict.experience.present}</>
+                )}
               </p>
 
               <h3 className="mt-2 text-xl font-semibold text-foreground">{job.role[lang]}</h3>

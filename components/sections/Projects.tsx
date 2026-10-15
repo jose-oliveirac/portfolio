@@ -39,16 +39,22 @@ function ProjectLinks({ project, labels }: { project: Project; labels: Labels })
   );
 }
 
-/** Project name, plus an "Em andamento" badge when the project is still being built. */
-function ProjectTitle({ project, size, inProgressLabel }: { project: Project; size: string; inProgressLabel: string }) {
+type ProjectTitleProps = {
+  project: Project;
+  size: string;
+  inProgressLabel: string;
+  lang: "pt" | "en";
+};
+
+const badgeClass = "rounded-full bg-accent/15 px-2.5 py-0.5 font-mono text-xs text-accent-hover";
+
+/** Project name, plus its badges: "Em andamento" and/or a custom one (e.g. "Hackathon UniCietec"). */
+function ProjectTitle({ project, size, inProgressLabel, lang }: ProjectTitleProps) {
   return (
     <div className="flex flex-wrap items-center gap-3">
       <h3 className={cn("font-semibold text-foreground", size)}>{project.title}</h3>
-      {project.inProgress && (
-        <span className="rounded-full bg-accent/15 px-2.5 py-0.5 font-mono text-xs text-accent-hover">
-          {inProgressLabel}
-        </span>
-      )}
+      {project.badge && <span className={badgeClass}>{project.badge[lang]}</span>}
+      {project.inProgress && <span className={badgeClass}>{inProgressLabel}</span>}
     </div>
   );
 }
@@ -109,7 +115,7 @@ export async function Projects() {
                 {dict.projects.featured}
               </p>
               <div className="mt-3">
-                <ProjectTitle project={project} size="text-2xl" inProgressLabel={dict.projects.inProgress} />
+                <ProjectTitle project={project} size="text-2xl" inProgressLabel={dict.projects.inProgress} lang={lang} />
               </div>
               <p className="mt-3 leading-relaxed text-muted">{project.description[lang]}</p>
               <StackTags stack={project.stack} />
@@ -123,7 +129,7 @@ export async function Projects() {
           {others.map((project) => (
             <li key={project.title} className="reveal">
               <TiltCard className="flex h-full flex-col rounded-2xl border border-line bg-surface p-6 hover:border-accent/50">
-                <ProjectTitle project={project} size="text-xl" inProgressLabel={dict.projects.inProgress} />
+                <ProjectTitle project={project} size="text-xl" inProgressLabel={dict.projects.inProgress} lang={lang} />
                 <p className="mt-3 flex-1 leading-relaxed text-muted">{project.description[lang]}</p>
                 <StackTags stack={project.stack} />
                 <ProjectLinks project={project} labels={labels} />
