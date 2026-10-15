@@ -45,7 +45,7 @@ function ProjectTitle({ project, size, inProgressLabel }: { project: Project; si
     <div className="flex flex-wrap items-center gap-3">
       <h3 className={cn("font-semibold text-foreground", size)}>{project.title}</h3>
       {project.inProgress && (
-        <span className="rounded-full bg-accent/15 px-2.5 py-0.5 font-mono text-xs text-accent">
+        <span className="rounded-full bg-accent/15 px-2.5 py-0.5 font-mono text-xs text-accent-hover">
           {inProgressLabel}
         </span>
       )}

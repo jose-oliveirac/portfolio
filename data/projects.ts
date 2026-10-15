@@ -57,8 +57,8 @@ export const projects: Project[] = [
   {
     title: "Netflix Clone",
     description: {
-      pt: "Clone funcional da Netflix com autenticação e banco de dados no Firebase, catálogo vindo da API do TMDB e assinatura via Stripe Checkout. Publicado no Firebase Hosting.",
-      en: "A working Netflix clone with Firebase authentication and database, a catalog from the TMDB API and subscriptions through Stripe Checkout. Deployed on Firebase Hosting.",
+      pt: "Clone da Netflix com autenticação e banco de dados no Firebase, catálogo vindo da API do TMDB e assinatura via Stripe Checkout.",
+      en: "A Netflix clone with Firebase authentication and database, a catalog from the TMDB API and subscriptions through Stripe Checkout.",
     },
     stack: ["React", "Redux", "Firebase", "Stripe"],
     inProgress: true,

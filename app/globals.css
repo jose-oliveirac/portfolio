@@ -243,10 +243,13 @@
   }
 }
 
+/*
+ * Slide only, no fade: text never passes through a half-transparent state,
+ * so its color contrast is always the real one (accessibility audits).
+ */
 @keyframes reveal {
   from {
-    opacity: 0;
-    transform: translateY(2.5rem) scale(0.98);
+    transform: translateY(3rem) scale(0.97);
   }
 }
 
