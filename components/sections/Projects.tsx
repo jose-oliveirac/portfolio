@@ -2,6 +2,7 @@ import Image from "next/image";
 import { locale } from "next/root-params";
 import { Section } from "@/components/ui/Section";
 import { Tag } from "@/components/ui/Tag";
+import { TiltCard } from "@/components/ui/TiltCard";
 import { projects, type Project } from "@/data/projects";
 import { getDictionary } from "@/lib/dictionaries";
 import { cn } from "@/lib/utils";
@@ -77,10 +78,11 @@ export async function Projects() {
     <Section id="projects" title={dict.projects.title}>
       <div className="space-y-6">
         {featured.map((project, index) => (
-          <article
-            key={project.title}
+          // The reveal (scroll) and the tilt (mouse) both use transform, so they live on different elements
+          <div key={project.title} className="reveal">
+          <TiltCard
             className={cn(
-              "reveal grid overflow-hidden rounded-2xl border border-line bg-surface",
+              "grid overflow-hidden rounded-2xl border border-line bg-surface hover:border-accent/50",
               // Every second featured card puts the screenshot on the right
               index % 2 === 0 ? "md:grid-cols-[3fr_2fr]" : "md:grid-cols-[2fr_3fr]",
             )}
@@ -92,6 +94,8 @@ export async function Projects() {
                 sizes="(min-width: 768px) 600px, 100vw"
                 className={cn(
                   "h-full w-full border-b border-line object-cover object-top md:border-b-0",
+                  // Slow zoom on the screenshot while the card is hovered
+                  "transition-transform duration-700 ease-out group-hover:scale-[1.04]",
                   index % 2 === 0 ? "md:border-r" : "md:order-last md:border-l",
                 )}
               />
@@ -107,18 +111,19 @@ export async function Projects() {
               <StackTags stack={project.stack} />
               <ProjectLinks project={project} labels={labels} />
             </div>
-          </article>
+          </TiltCard>
+          </div>
         ))}
 
         <ul className={cn("grid gap-6", others.length > 1 && "sm:grid-cols-2")}>
           {others.map((project) => (
             <li key={project.title} className="reveal">
-              <article className="flex h-full flex-col rounded-2xl border border-line bg-surface p-6 transition-colors hover:border-accent/50">
+              <TiltCard className="flex h-full flex-col rounded-2xl border border-line bg-surface p-6 hover:border-accent/50">
                 <ProjectTitle project={project} size="text-xl" inProgressLabel={dict.projects.inProgress} />
                 <p className="mt-3 flex-1 leading-relaxed text-muted">{project.description[lang]}</p>
                 <StackTags stack={project.stack} />
                 <ProjectLinks project={project} labels={labels} />
-              </article>
+              </TiltCard>
             </li>
           ))}
         </ul>
